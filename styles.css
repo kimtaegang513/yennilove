@@ -1,0 +1,141 @@
+        /* 이서윤체 폰트 적용을 위한 코드 */
+        @font-face {
+            font-family: "LeeSeoyun";
+            src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff") format("woff");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* body태그 자체에 css 요소 부여 */
+        body {
+            font-family: "LeeSeoyun";
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-image: url("./resources/background.png");
+        }
+
+        /* 너비는 390픽셀이구, 배경색이 좀 필요하고 부모(body) 높이 전체를 쓸거야 */
+        .container {
+            width: 390px;
+            background-color: #ff9d73;
+            height: 100%;
+        }
+
+        /* 위로 여유가 30픽셀 정도 있었으면 좋겠네 */
+        .photos {
+            margin-top: 30px;
+        }
+
+        .photo-frame {
+            background-color: white;
+            margin: 15px 20px;
+            height: 200px;
+            background-size: cover;
+            position: relative;
+            cursor: pointer;
+            border-radius: 5%;
+        }
+
+        /* 아래 영역 전체는, flexible하게 하되 그 내부 아이템들은 세로로 쌓을거야 */
+        /* 근데 모두 가운데 정렬 했으면 좋겠어! */
+        .footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 아래 영역의 제목 부분은 폰트가 좀 두껍고, 사이즈는 25픽셀! 흰색으로 */
+        .f-title {
+            font-size: 25px;
+            font-weight: 900;
+            color: white;
+        }
+
+        /* 아래 영역의 날짜 부분은 폰트가 중간 두께고, 사이즈는 15픽셀! 흰색으로 */
+        .f-date {
+            font-size: 15px;
+            font-weight: 500;
+            color: white;
+        }
+
+        #image1 {
+            background-image: url("./resources/img1.jpeg");
+        }
+
+        #image2 {
+            background-image: url("./resources/img2.jpeg");
+        }
+
+        #image3 {
+            background-image: url("./resources/img3.jpeg");
+        }
+
+        #image4 {
+            background-image: url("./resources/img4.jpeg");
+        }
+
+        .photo-description {
+            /* 배경은 검게, 글자는 흰 색으로 */
+            color: white;
+            background-color: black;
+
+            /* 가로 너비는 내부 콘텐츠에 딱 맞게! */
+            width: fit-content;
+            padding: 0 20px;
+            margin-bottom: 10px;
+
+            /* 경계선 */
+            border-radius: 10px;
+            position: absolute;
+            bottom: 0;
+            transform: translate(-50%);
+            left: 50%;
+
+            opacity: 0;
+        }
+
+        /* opacity : 투명도를 의미해요! opacity는 1에 가까워 질 수록 불투명하다. 즉 다 보인다. */
+        .showText {
+            opacity: 1;
+            transition: opacity 0.5s linear;
+        }
+
+        /* opacity : 투명도를 의미해요! opacity는 0에 가까워 질 수록 투명하다. 즉 안보인다. */
+        /* transition : 나타날 때 0.5초동안 천천히 나타나는 효과를 주라는 의미에요 */
+        .hideText {
+            opacity: 0;
+        }
+
+        button {
+            cursor: pointer;
+            font: inherit;
+            margin: 0;
+            padding: 0;
+           
+          }
+          
+          .button {
+            background-color: #404663;
+            color: #fff;
+            border: 0;
+            font-size: 2rem;
+            font-weight: 400;
+            padding: 0.5em 1.25em;
+            border-radius: 0.5em;
+            z-index: 999;
+            position: relative;
+            
+            gap: 0.5em;
+            box-shadow:
+              0px 1.7px 2.2px rgba(0, 0, 0, 0.02),
+              0px 4px 5.3px rgba(0, 0, 0, 0.028),
+              0px 7.5px 10px rgba(0, 0, 0, 0.035),
+              0px 13.4px 17.9px rgba(0, 0, 0, 0.042),
+              0px 25.1px 33.4px rgba(0, 0, 0, 0.05),
+              0px 60px 80px rgba(0, 0, 0, 0.07);
+          }
+          
+          .button:active {
+            transform: scale(1.01);
+          }
